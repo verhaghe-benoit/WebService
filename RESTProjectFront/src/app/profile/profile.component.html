@@ -1,0 +1,75 @@
+
+<body class="bg-light">
+<div *ngFor="let info of profile">
+  <div class="container">
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h2>Your profile informations</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2 order-md-2 mb-4">
+      </div>
+      <div class="col-md-8 order-md-1">
+        <form (submit)="submit()">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Firstname : {{info.firstname}}</label>
+              <input type="text" class="form-control" id="firstName" name="firstname" [(ngModel)]="firstname" placeholder="">
+
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Lastname : {{info.lastname}}</label>
+              <input type="text" class="form-control" id="lastName" name="lastname" [(ngModel)]="lastname" placeholder="">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="username">Username : {{info.login}}</label>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="password">Password</label>
+              <div class="input-group">
+                <input type="password" name="password" [(ngModel)]="password" placeholder="Password">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="gender">Gender : {{info.gender}}</label>
+              <div class="input-group">
+                <select class="custom-select d-block w-100" id="gender" name="gender" [(ngModel)]="gender">
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Apache Helicopter</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="birthday">Birthday : {{info.birthday}}</label>
+              <div class="input-group">
+                <input type="date" name="birthday" placeholder="Birthday" [(ngModel)]="birthday">
+              </div>
+            </div>
+
+
+            <div class="col-md-6 mb-3">
+              <label for="email">Email : {{info.email}}</label>
+              <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" placeholder="you@example.com">
+            </div>
+          </div>
+
+          <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Edit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

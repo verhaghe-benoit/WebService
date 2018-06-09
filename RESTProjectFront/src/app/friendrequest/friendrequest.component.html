@@ -1,0 +1,14 @@
+ <div *ngFor="let user of request;" style="padding-top: 15px;">
+     <!--<div *ngIf="user.id != localStorage.getItem('id') "> -->
+         <div class="card border-primary" style="width: 40%;margin: auto">
+             <div class="card-header"> <b> {{ user.firstname }} {{ user.lastname }} </b>
+                 <div style="float:right;">
+                     <button type="button" class="btn btn-primary" (click)="declineRequest(user.id)" > Decline </button>  &nbsp; &nbsp;
+                     <button type="button" class="btn btn-primary" (click)="acceptRequest(user.id)"> Accept </button>
+                 </div>
+             </div>
+         </div>
+     <!--</div>-->
+ </div>
+
+

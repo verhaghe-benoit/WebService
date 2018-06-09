@@ -1,0 +1,13 @@
+<div *ngFor="let user of users;" style="padding-top: 15px;">
+     <div *ngIf="user.id != myid">
+         <div class="card border-primary" style="width: 40%;margin: auto">
+             <div class="card-header"> {{ user.firstname }} {{ user.lastname }}
+                 <div style="float:right;">
+                    <button type="button" class="btn btn-primary" (click)="friendRequest(user.id)"> Add </button>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+
+

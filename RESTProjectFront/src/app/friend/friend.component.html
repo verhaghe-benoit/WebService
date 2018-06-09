@@ -1,0 +1,11 @@
+ <div *ngFor="let user of friends;" style="padding-top: 15px;">
+     <div class="card border-primary" style="width: 40%;margin: auto">
+         <div class="card-header"> <b> {{ user.firstname }} {{ user.lastname }} </b>
+             <div style="float:right;">
+                <button type="button" class="btn btn-primary" (click)="deleteThis(user.friend_user_id2)"> Delete </button>
+             </div>
+         </div>
+     </div>
+ </div>
+
+

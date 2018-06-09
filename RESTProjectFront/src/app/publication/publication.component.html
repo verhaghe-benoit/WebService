@@ -1,0 +1,54 @@
+<div style="width: 40%;margin: auto;">
+    <form (submit)="submit()">
+        <label for="contenu">New publication</label>
+        <input  type="textarea"  width="80%" name="contenu" [(ngModel)]="contenu">
+        <button  class="btn btn-primary" > Send </button>
+    </form>
+</div>
+
+<div *ngFor="let publication of publications;">
+    <section>
+        <div class="container" >
+            <div class="box image">
+                <div class="box-header">
+                    <h3><a href="">{{ publication.firstname }}  {{ publication.lastname }} </a>
+                       <br/><br/> <span>{{ publication.publication_date }} <i class="fa fa-globe"></i></span>
+                    </h3>
+                    <span><i class="fa fa-angle-down"></i></span>
+                    <div class="window"><span></span></div>
+                </div>
+                <div class="box-content">
+                    <div class="bottom">
+                        <p>{{ publication.publication_content }}</p>
+                        <span><span class="fa fa-search-plus"></span></span>
+                    </div>
+                </div>
+
+                <div *ngFor="let comment of comments;" class="box-comments ">
+                    <div *ngIf="comment.comment_publication_id == publication.publication_id" class="if">
+                        <div class="comment">
+                            <div class="content">
+                                <h3><a href="">{{ comment.firstname }}  {{ comment.lastname }} </a><br/><br/><span><time>  {{ comment.comment_date }} </time></span></h3>
+                                <p>{{ comment.comment_content }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-new-comment">
+                    <div class="content">
+                        <form (submit)="submitComment(publication.publication_id)">
+                            <input  type="textarea" placeholder="Write a comment here..." size="30" name="comment_contenu" [(ngModel)]="comment_contenu">
+                            <button  class="btn btn-primary" > Send </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+
+
+
