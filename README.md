@@ -19,7 +19,7 @@ php -S localhost:1234 public/index.php
 
 ``` 
 
-#run angular client : 
+#Run angular client : 
 
 ```
 
@@ -31,7 +31,7 @@ ng serve
 ``` 
 
 
-i also used mysqld so u need to have it and run the following command 
+We also used mysqld so you need to have it and run the following command 
 ```
 
 mysqld -u root -p 
