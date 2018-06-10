@@ -14,7 +14,6 @@
 ```
 
 cd Server
-composer install
 php -S localhost:1234 public/index.php
 
 ``` 
